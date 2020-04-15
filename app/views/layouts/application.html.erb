@@ -10,14 +10,76 @@
   </head>
 
   <body>
+    <div class="top-nav">
+      <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3">
+        <div class="brand float-left">
+          ASDassist
+        </div>
+        <div class="add float-right">
+          <% if current_user %>
+            You're signed in as <%= current_user.email %>.
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Sign In", new_user_session_path %>
+            <%= link_to "Sign Up", new_user_registration_path %>
+          <% end %>
+          <% if notice.present? %>
+            <p class="alert alert-info"><%= notice %></p>
+          <% end %>
+          <% if alert.present? %>
+            <p class="alert alert-danger"><%= alert %></p>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+      <br class="clear-fix" />
+    </div>
 
-    <% if notice.present? %>
-      <p class="alert alert-info"><%= notice %></p>
-    <% end %>
-    <% if alert.present? %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-
-    <%= yield %>
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-3">
+            <b>Teachers</b>
+            <br />
+            <%= link_to 'Teach a Course', '#' %>
+            <br />
+            <%= link_to 'My Dashboard', '#' %>
+          </div>
+          <div class="col-12 col-sm-3">
+            <b>About</b>
+            <br />
+            <%= link_to 'Team', '#' %>
+            <br />
+            <%= link_to 'Careers', '#' %>
+            <br />
+            <%= link_to 'Privacy Policy', '#' %>
+          </div>
+          <div class="col-12 col-sm-3">
+            <b>Contact</b>
+            <br />
+            courtney55@knights.ucf.edu
+            <br />
+            Saint Petersburg
+            <br />
+            Florida 33702
+          </div>
+          <div class="col-12 col-sm-3 social">
+            <b>Social</b>
+            <br />
+            <br />
+            <%= link_to 'https://github.com/courtney55' do %>
+              <span class="fa fa-github-square fa-2x social-button"></span>
+            <% end %>
+            <%= link_to 'https://www.facebook.com/courtney.fink.5' do %>
+              <span class="fa fa-facebook-square fa-2x social-button"></span>
+            <% end %>
+            <%= link_to 'https://twitter.com/Courtney_fink7' do %>
+              <span class="fa fa-twitter-square fa-2x social-button"></span> 
+            <% end %>
+          </div>
+        </div>        
+      </div>
+    </div>
+ 
   </body>
 </html>

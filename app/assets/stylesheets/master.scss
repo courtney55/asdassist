@@ -1,1 +1,66 @@
 @import "bootstrap";
+
+body {
+  background-color: #bcd6e7;
+}
+
+.top-nav {
+  background-color: #399593;
+  height: 70px;
+  padding-top: 15px;
+}
+
+.brand {
+  font-size: 30px;
+}
+
+.top-nav .add a {
+  font-weight: bold;
+  color: black;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.top-nav .add {
+  margin-top: 10px;
+}
+
+.hero {
+  background: image_url('asdlogo2.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 370px;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar {
+  margin: 0;
+}
+
+
+.frosty {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.frosty h1 {
+  font-family: "Helvetica Neue", Helvetica;
+  font-weight: 100;
+}
+
+.frosty h2 {
+  font-family: "Helvetica Neue", Helvetica;
+  font-weight: 200;
+}
+
+.btn {
+  border-radius: 0;
+  padding: 10px;
+}
+
+.feature {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
